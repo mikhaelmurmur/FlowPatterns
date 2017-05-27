@@ -7,24 +7,25 @@
 
 int main()
 {
-	FlowPatterns::SequenceConveyor conveyor;
-	conveyor.pushBack([]()->FlowPatterns::StageResult
+	FPN::SequenceConveyor conveyor;
+
+	conveyor.pushBack([]()->FPN::StageResult
 	{
 		std::cout << "First!\n";
-		return FlowPatterns::StageResult::Success;
+		return FPN::StageResult::Success;
 	});
 	
-	conveyor.pushBack([]()->FlowPatterns::StageResult
+	conveyor.pushBack([]()->FPN::StageResult
 	{
 		std::cout << "Second!\n";
-		return FlowPatterns::StageResult::Success;
+		return FPN::StageResult::Success;
 	});
 	
-	conveyor.pushBack([]()->FlowPatterns::StageResult
+	conveyor.pushBack([]()->FPN::StageResult
 	{
 		std::cout << "Third!\n";
 		std::cin.get();
-		return FlowPatterns::StageResult::Success;
+		return FPN::StageResult::Success;
 	});
 
 	conveyor.run();

@@ -2,17 +2,17 @@
 #include "SequenceConveyor.h"
 
 
-void FlowPatterns::SequenceConveyor::pushBack(std::function<StageResult()> func)
+void FPN::SequenceConveyor::pushBack(std::function<StageResult()> func)
 {
 	m_tasks.push_back(func);
 }
 
-void FlowPatterns::SequenceConveyor::pop()
+void FPN::SequenceConveyor::pop()
 {
 	m_tasks.pop_back();
 }
 
-void FlowPatterns::SequenceConveyor::run()
+void FPN::SequenceConveyor::run()
 {
 	for (auto& func : m_tasks)
 	{

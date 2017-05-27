@@ -3,7 +3,7 @@
 #include <functional>
 #include "FlowTypes.h"
 
-namespace FlowPatterns
+namespace FPN
 {
 	class SequenceConveyor
 	{

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace FlowPatterns
+namespace FPN
 {
 	enum StageResult
 	{
