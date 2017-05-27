@@ -1,17 +1,18 @@
 #include "stdafx.h"
 #include "SequenceConveyor.h"
 
-void SequenceConveyor::pushBack(std::function<void()> func)
+
+void FlowPatterns::SequenceConveyor::pushBack(std::function<StageResult()> func)
 {
 	m_tasks.push_back(func);
 }
 
-void SequenceConveyor::pop()
+void FlowPatterns::SequenceConveyor::pop()
 {
 	m_tasks.pop_back();
 }
 
-void SequenceConveyor::run()
+void FlowPatterns::SequenceConveyor::run()
 {
 	for (auto& func : m_tasks)
 	{

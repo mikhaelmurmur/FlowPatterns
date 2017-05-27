@@ -1,21 +1,24 @@
 #pragma once
 #include <list>
 #include <functional>
+#include "FlowTypes.h"
 
-class SequenceConveyor
+namespace FlowPatterns
 {
-public:
-	SequenceConveyor() = default;
-	SequenceConveyor(SequenceConveyor&&) = delete;
-	SequenceConveyor(const SequenceConveyor&) = delete;
-	~SequenceConveyor() = default;
+	class SequenceConveyor
+	{
+	public:
+		SequenceConveyor() = default;
+		SequenceConveyor(SequenceConveyor&&) = delete;
+		SequenceConveyor(const SequenceConveyor&) = delete;
+		~SequenceConveyor() = default;
 
-	void pushBack(std::function<void()>);
-	void pop();
+		void pushBack(std::function<StageResult()>);
+		void pop();
 
-	void run();
+		void run();
 
-private:
-	std::list<std::function<void()>> m_tasks;
-};
-
+	private:
+		std::list<std::function<StageResult()>> m_tasks;
+	};
+}
